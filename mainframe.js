@@ -7,8 +7,8 @@ var server = net.createServer(function(c) { //'connection' listener
   	});
 	c.on('data', function(data){
 		console.log('received: ' + data);
-		var h = "id,nome,valor".split(",");
-		var v = new String(data).split(",");
+		var h = "Number|Gender|GivenName|Surname|StreetAddress|City|State|ZipCode|CountryFull|TelephoneNumber|Birthday|NationalID|Occupation|CCType".split("|");
+		var v = new String(data).split("|");
 		if(v instanceof Array){
 			for(i=0; i<v.length; i++){	
 				console.log(h[i] + " = " + v[i]);
