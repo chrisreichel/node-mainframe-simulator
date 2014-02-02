@@ -34,7 +34,7 @@ var server = net.createServer(function(c) { //'connection' listener
 		}
 		c.write(retVal + "\n");
 	});
-  	c.write('hello\r\n');
+  	//c.write('hello\r\n');
 	c.pipe(c);
 });
 
