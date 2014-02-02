@@ -5,8 +5,11 @@ var server = net.createServer(function(c) { //'connection' listener
   	c.on('end', function() {
     		console.log('server disconnected');
   	});
+	c.on('error', function(err){
+		console.log("Erro! "+ err);
+	});
 	c.on('data', function(data){
-		console.log('received: ' + data);
+		//console.log('received: ' + data);
 		var h = "Number|Gender|GivenName|Surname|StreetAddress|City|State|ZipCode|CountryFull|TelephoneNumber|Birthday|NationalID|Occupation|CCType".split("|");
 		var v = new String(data).split("|");
 		if(v instanceof Array){
